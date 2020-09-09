@@ -49,7 +49,7 @@ def hello_world():
     nn=request.args.get("n")
     cnt=request.args.get("cnt")
     nn=int(nn)
-    cnt=int(cc)
+    cnt=int(cnt)
     ff=f1(nn,cnt)
     
 
