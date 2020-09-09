@@ -56,7 +56,7 @@ def hello_world():
     
     
        
-    return "<xmp>" + 'instance  ' + str(os.getenv("CF_INSTANCE_INDEX", 0))+ "   lsss   " +now+"   first    "+ff+  "</xmp>"
+    return "<xmp>" + 'instance  ' + str(os.getenv("CF_INSTANCE_INDEX", 0)) + "  " +ff+  "</xmp>"
 
 if __name__ == '__main__':
     # Run the app, listening on all IPs with our chosen port number
