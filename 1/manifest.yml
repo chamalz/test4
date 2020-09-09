@@ -1,7 +1,7 @@
 ---
 applications:
 - name: myapp
-  memory: 256MB
+  memory: 32B
   disk_quota: 64MB
   random-route: true
   buildpack: python_buildpack
