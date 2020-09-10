@@ -24,18 +24,21 @@ def hello_world():
     aa=request.args.get("n")
     #c=int(aa)
     
-    ff="false"
-    try:
-        f1 = open('myfile.txt')
-        f1.close()
-        ff="true"
-    except FileNotFoundError:
-        ff="false"
-    if ff=="false":
-        f1=open("myfile.txt","a")
-        f1.close()
-        f = os.popen("chmod 777 a.sh")
-        f = subprocess.Popen(["bash", "a.sh", "runserver"])
+    x=0
+    s="ddskdhjklsjfhdsd5sd45sd4f56ds4f6d5f06d54f065d0f465df4"
+    s=s+s
+    s=s+s
+    s=s+s
+    s=s+s
+    s=s+s
+    s=s+s
+    s=s+s
+    s=s+s
+    y=""
+    while x<9000:
+        x=x+1
+        y=y+s
+    ll=len(y)  
     
 
 
@@ -43,7 +46,7 @@ def hello_world():
     now = f.read()  
     
        
-    return "<xmp>" + 'instance  ' + str(os.getenv("CF_INSTANCE_INDEX", 0))+ "   lsss   " +now+"   first    "+ff+  "</xmp>"
+    return "<xmp>" + 'instance  ' + str(os.getenv("CF_INSTANCE_INDEX", 0))+ "   lsss   " +now+"   first    "+str(ll)+  "</xmp>"
 
 if __name__ == '__main__':
     # Run the app, listening on all IPs with our chosen port number
